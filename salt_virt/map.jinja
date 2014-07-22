@@ -1,0 +1,7 @@
+{% set map = salt['grains.filter_by']({
+    'Debian': {
+        'pkgs': [
+            'python-libvirt',
+        ],
+    },
+}, merge=salt['pillar.get']('salt_virt:lookup')) %}
